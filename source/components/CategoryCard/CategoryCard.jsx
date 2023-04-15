@@ -4,7 +4,7 @@ const CategoryCard = () => {
     return (
         <div className={styles.card}>
             <div className={styles.edit}>
-                <span></span>
+                <span>I</span>
             </div>
             <h2>Título</h2>
             <h3>R$ 4.300</h3>
