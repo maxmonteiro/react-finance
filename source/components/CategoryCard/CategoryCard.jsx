@@ -1,15 +1,18 @@
 import styles from './CategoryCard.module.scss';
 import {TbPencil} from 'react-icons/tb';
 
-const CategoryCard = () => {
+const CategoryCard = ({ data }) => {
+
+    const { title, amount, percentage } = data;
+
     return (
         <div className={styles.card}>
             <div className={styles.edit}>
                 <TbPencil className='icon hover'/>
             </div>
-            <h2>Título</h2>
-            <h3>R$ 4.300</h3>
-            <h4>Alocado: 40%</h4>
+            <h2>{title}</h2>
+            <h3>{amount}</h3>
+            <h4>Alocado: {percentage}%</h4>
         </div>
     )
 }
