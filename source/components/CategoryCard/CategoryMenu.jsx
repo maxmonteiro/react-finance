@@ -1,11 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import CardMenu from "../UI/CardMenu";
 
 const CategoryMenu = ({toggleMenuHandler}) => {
+    const menuRef = useRef();
 
     useEffect(() => {
-        const clickHandler = () => {
-            toggleMenuHandler();
+        const clickHandler = (e) => {
+            if (!menuRef.current.contains(e.target)) toggleMenuHandler();
         }
 
         document.addEventListener('mousedown', clickHandler);
@@ -16,7 +17,7 @@ const CategoryMenu = ({toggleMenuHandler}) => {
     }, [])
 
     return (
-        <CardMenu>
+        <CardMenu ref={menuRef}>
             <li>Editar</li>
             <li>Adicionar</li>
             <li>Descontar</li>
