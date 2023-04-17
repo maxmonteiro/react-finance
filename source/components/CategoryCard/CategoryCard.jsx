@@ -2,15 +2,13 @@ import useGetCurrency from '@/source/hooks/useGetCurrency';
 import styles from './CategoryCard.module.scss';
 import {TbPencil} from 'react-icons/tb';
 import CategoryMenu from './CategoryMenu';
-import { useState } from 'react';
+import useMenu from '../../hooks/useMenu';
 
 
 const CategoryCard = ({ data }) => {
 
     const { title, amount, percentage } = data;
-    const [isVisible, setIsVisible] = useState(false);
-
-    const toggleMenuHandler = () => setIsVisible(!isVisible);
+    const [isVisible, toggleMenuHandler] = useMenu()
 
     const formatedAmount = useGetCurrency(amount);
 
