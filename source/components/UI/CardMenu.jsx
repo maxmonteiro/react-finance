@@ -1,13 +1,11 @@
 import styles from './CardMenu.module.scss';
 
-const CardMenu = () => {
+const CardMenu = ({children}) => {
     return (
         <div className={styles.card}>
             <div>
                 <ul className={styles.list}>
-                    <li>Editar</li>
-                    <li>Adicionar</li>
-                    <li>Remover</li>
+                    {children}
                 </ul>
             </div>
         </div>
