@@ -1,6 +1,7 @@
 import useGetCurrency from '@/source/hooks/useGetCurrency';
 import styles from './CategoryCard.module.scss';
 import {TbPencil} from 'react-icons/tb';
+import CardMenu from '../UI/CardMenu';
 
 
 const CategoryCard = ({ data }) => {
@@ -13,6 +14,7 @@ const CategoryCard = ({ data }) => {
         <div className={styles.card}>
             <div className={styles.edit}>
                 <TbPencil className='icon hover'/>
+                <CardMenu />
             </div>
             <h2>{title}</h2>
             <h3>{formatedAmount}</h3>
